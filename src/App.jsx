@@ -5,17 +5,23 @@ import SignUp from './Pages/SignUp';
 import Profile from './Pages/Profile';
 import Cart from './Pages/Cart';
 import Header from './Components/Header';
+import About from './Pages/About';
+import CupCakes from './Pages/CupCakes';
+import Juice from './Pages/Juice';
 
 export default function App() {
   return (
     <BrowserRouter>
-    <Header />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/cup-cakes" element={<CupCakes />} />
+        <Route path="/juice" element={<Juice />} />
       </Routes>
     </BrowserRouter>
   );
