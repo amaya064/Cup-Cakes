@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // for navigation
+import { useNavigate } from 'react-router-dom';
 
 export default function SignUp() {
   const [formData, setFormData] = useState({
@@ -22,7 +22,7 @@ export default function SignUp() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/api/users', {
+      const response = await fetch('http://localhost:3000/signup', { // Updated endpoint
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ export default function SignUp() {
       const data = await response.json();
 
       if (response.ok) {
-        setMessage('User created successfully!');
+        setMessage('Submitted'); // Updated success message
         setFormData({ username: '', email: '', password: '' });
       } else {
         setMessage(data.message || 'An error occurred');
@@ -51,7 +51,7 @@ export default function SignUp() {
         <div
           className="w-1/2"
           style={{
-            backgroundImage: "url('src/images/photo1.jpg')", // Replace with your image URL
+            backgroundImage: "url('src/images/photo1.jpg')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -61,13 +61,13 @@ export default function SignUp() {
         <div
           className="w-1/2 p-6"
           style={{
-            backgroundColor: '#FFEBEE', // Light cream color
+            backgroundColor: '#FFEBEE', // Light pink color
           }}
         >
           <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">Sign Up</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="username" className="block text-sm font-medium text-gray-700">
                 Username:
               </label>
               <input
@@ -120,7 +120,7 @@ export default function SignUp() {
             <div className="mt-4 text-center">
               <p
                 className={`text-lg ${
-                  message.includes('successfully') ? 'text-green-500' : 'text-red-500'
+                  message === 'Submitted' ? 'text-green-500' : 'text-red-500'
                 }`}
               >
                 {message}

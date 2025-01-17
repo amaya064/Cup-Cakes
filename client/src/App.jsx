@@ -8,6 +8,7 @@ import Header from './Components/Header';
 import About from './Pages/About';
 import CupCakes from './Pages/CupCakes';
 import Juice from './Pages/Juice';
+import Footer from './Components/Footer';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/cup-cakes" element={<CupCakes />} />
         <Route path="/juice" element={<Juice />} />
       </Routes>
+    <Footer />
     </BrowserRouter>
   );
 }
