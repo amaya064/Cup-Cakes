@@ -106,7 +106,7 @@ export default function SignIn() {
           <div className="w-full sm:w-2/5 md:w-1/3 hidden md:block p-6">
             <h3 className="text-gray-800 text-xl font-semibold mb-4">Welcome Back!</h3>
             <p className="text-gray-600 mb-4">Sign in to continue exploring our platform and access your account information. We are glad to have you back.</p>
-            <p className="text-gray-500 text-sm">New here? <a href="/signup" className="text-blue-500 hover:underline">Create an account</a></p>
+            <p className="text-gray-500 text-sm">New here? <a href="/sign-up" className="text-blue-500 hover:underline">Create an account</a></p>
           </div>
         </div>
       </div>
