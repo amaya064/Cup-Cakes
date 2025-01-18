@@ -22,9 +22,9 @@ export default function About() {
         {/* Photo on the Right */}
         <div className="w-full md:w-1/2 p-4">
           <img
-            src="url('src/images/photo3.jpg')"
+            src="src/images/photo3.jpg"
             alt="Muffins Display"
-            className="rounded-lg shadow-lg w-full object-cover"
+            className="rounded-lg shadow-lg object-cover max-w-[90%] max-h-[300px] mx-auto"
           />
         </div>
       </div>
@@ -36,7 +36,7 @@ export default function About() {
           {/* Chef Photo */}
           <div className="w-full md:w-1/3 p-4">
             <img
-              src="url('src/images/photo2.png')"
+              src="src/images/photo2.png"
               alt="Chef Portrait"
               className="rounded-full shadow-lg w-48 h-48 mx-auto md:mx-0 object-cover"
             />
