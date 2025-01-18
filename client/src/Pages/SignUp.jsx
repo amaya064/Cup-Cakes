@@ -22,7 +22,7 @@ export default function SignUp() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/signup', { // Updated endpoint
+      const response = await fetch('http://localhost:3000/api/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -33,14 +33,15 @@ export default function SignUp() {
       const data = await response.json();
 
       if (response.ok) {
-        setMessage('Submitted'); // Updated success message
-        setFormData({ username: '', email: '', password: '' });
+        setMessage('User registered successfully.');
+        setTimeout(() => navigate('/sign-in'), 1500);
       } else {
-        setMessage(data.message || 'An error occurred');
+        console.error('Backend Error:', data);
+        setMessage(data.message || 'An error occurred.');
       }
     } catch (error) {
+      console.error('Fetch Error:', error);
       setMessage('Error submitting the form.');
-      console.error('Error:', error);
     }
   };
 
@@ -58,12 +59,7 @@ export default function SignUp() {
         ></div>
 
         {/* Right Side: Sign Up Form */}
-        <div
-          className="w-1/2 p-6"
-          style={{
-            backgroundColor: '#FFEBEE', // Light pink color
-          }}
-        >
+        <div className="w-1/2 p-6 bg-pink-100">
           <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">Sign Up</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
@@ -118,11 +114,7 @@ export default function SignUp() {
 
           {message && (
             <div className="mt-4 text-center">
-              <p
-                className={`text-lg ${
-                  message === 'Submitted' ? 'text-green-500' : 'text-red-500'
-                }`}
-              >
+              <p className={`text-lg ${message === 'User registered successfully.' ? 'text-green-500' : 'text-red-500'}`}>
                 {message}
               </p>
             </div>
