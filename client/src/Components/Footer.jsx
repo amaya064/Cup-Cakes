@@ -2,10 +2,10 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-8">
+    <footer className="bg-gray-800 text-white py-8">
       <div className="container mx-auto px-4">
         {/* Top Section */}
-        <div className="flex flex-wrap justify-between items-center border-b border-gray-700 pb-6">
+        <div className="flex flex-wrap justify-between items-center border-b border-gray-500 pb-6">
           {/* Company Info */}
           <div className="mb-4 md:mb-0">
             <h2 className="text-xl font-bold">YourCompany</h2>

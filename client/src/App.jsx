@@ -9,6 +9,8 @@ import About from './Pages/About';
 import CupCakes from './Pages/CupCakes';
 import Juice from './Pages/Juice';
 import Footer from './Components/Footer';
+import CupcakeDetail from './Pages/cupcakeDetail';
+
 
 export default function App() {
   return (
@@ -23,6 +25,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/cup-cakes" element={<CupCakes />} />
         <Route path="/juice" element={<Juice />} />
+        <Route path="/cupcakeDetail" element={<CupcakeDetail />} />
       </Routes>
     <Footer />
     </BrowserRouter>
