@@ -1,9 +1,9 @@
 import express from 'express';
-import { test } from '../controller/user.controller.js';
-
+import { signin, signupuser } from '../controller/user.controller.js';
 
 const router = express.Router();
 
-router.get('/test', test);
+router.post('/signup', signupuser);
+router.post("/signin",signin)
 
 export default router;
