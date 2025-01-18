@@ -32,7 +32,7 @@ const cupcakes = [
     description:
       "A chocolate lover’s dream, featuring a moist chocolate base and decadent chocolate ganache frosting.",
     price: "$5.00 (includes a small snack)",
-    image: "src/images/photo7.jpg",
+    image: "src/images/photo8.jpg",
     id: 4,
   },
   {
@@ -40,7 +40,7 @@ const cupcakes = [
     description:
       "Infused with real coffee, this cupcake is perfect for coffee enthusiasts, topped with a coffee buttercream.",
     price: "$5.50 (includes a small snack)",
-    image: "src/images/photo8.jpg",
+    image: "src/images/photo7.jpg",
     id: 5,
   },
   {
