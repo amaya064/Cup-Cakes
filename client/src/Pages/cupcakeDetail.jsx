@@ -31,7 +31,7 @@ const cupcakes = [
     description:
       "A chocolate lover’s dream, featuring a moist chocolate base and decadent chocolate ganache frosting.",
     price: "$5.00 (includes a small snack)",
-    image: "/src/images/photo7.jpg",
+    image: "/src/images/photo8.jpg",
     id: 4,
   },
   {
@@ -39,7 +39,7 @@ const cupcakes = [
     description:
       "Infused with real coffee, this cupcake is perfect for coffee enthusiasts, topped with a coffee buttercream.",
     price: "$5.50 (includes a small snack)",
-    image: "/src/images/photo8.jpg",
+    image: "/src/images/photo7.jpg",
     id: 5,
   },
   {
@@ -59,19 +59,21 @@ export default function CupcakeDetail() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-100 p-6">
       {cupcake ? (
-        <div className="bg-white shadow-md rounded-lg overflow-hidden max-w-4xl mx-auto">
-          {/* Cupcake Image */}
+        <div
+          className="bg-white shadow-md rounded-lg overflow-hidden mx-auto flex"
+          style={{ maxWidth: "600px", maxHeight: "300px" }} // Adjusted dimensions
+        >
+          {/* Cupcake Image (Left Side) */}
           <img
             src={cupcake.image}
             alt={cupcake.name}
-            className="w-full h-64 object-cover"
+            className="w-1/2 object-cover"
+            style={{ height: "100%" }} // Fill the height of the container
           />
-          <div className="p-4">
-            {/* Cupcake Name */}
-            <h2 className="text-3xl font-semibold text-gray-800 mb-2">{cupcake.name}</h2>
-            {/* Cupcake Description */}
+          {/* Cupcake Details (Right Side) */}
+          <div className="p-6 w-1/2">
+            <h2 className="text-3xl font-semibold text-gray-800 mb-4">{cupcake.name}</h2>
             <p className="text-gray-600 mb-4">{cupcake.description}</p>
-            {/* Price */}
             <p className="text-blue-600 font-semibold">{cupcake.price}</p>
           </div>
         </div>
