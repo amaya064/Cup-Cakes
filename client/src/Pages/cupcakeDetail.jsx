@@ -61,20 +61,24 @@ export default function CupcakeDetail() {
       {cupcake ? (
         <div
           className="bg-white shadow-md rounded-lg overflow-hidden mx-auto flex"
-          style={{ maxWidth: "600px", maxHeight: "300px" }} // Adjusted dimensions
+          style={{ maxWidth: "800px", height: "400px" }}
         >
-          {/* Cupcake Image (Left Side) */}
+          {/* Cupcake Image (Left Section) */}
           <img
             src={cupcake.image}
             alt={cupcake.name}
             className="w-1/2 object-cover"
-            style={{ height: "100%" }} // Fill the height of the container
+            style={{ height: "100%" }}
           />
-          {/* Cupcake Details (Right Side) */}
+          {/* Cupcake Details (Right Section) */}
           <div className="p-6 w-1/2">
             <h2 className="text-3xl font-semibold text-gray-800 mb-4">{cupcake.name}</h2>
             <p className="text-gray-600 mb-4">{cupcake.description}</p>
-            <p className="text-blue-600 font-semibold">{cupcake.price}</p>
+            <p className="text-blue-600 font-semibold mb-4">{cupcake.price}</p>
+            {/* Add to Cart Button Below the Description */}
+            <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+              Add to Cart
+            </button>
           </div>
         </div>
       ) : (
@@ -82,21 +86,6 @@ export default function CupcakeDetail() {
           Sorry, cupcake not found!
         </p>
       )}
-      {/* Add to Cart Button */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-md">
-        {cupcake ? (
-          <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">
-            Add to Cart
-          </button>
-        ) : (
-          <button
-            className="w-full bg-gray-400 text-white py-2 px-4 rounded-lg cursor-not-allowed"
-            disabled
-          >
-            Item Not Available
-          </button>
-        )}
-      </div>
     </div>
   );
 }
