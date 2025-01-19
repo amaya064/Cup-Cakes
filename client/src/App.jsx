@@ -25,7 +25,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/cup-cakes" element={<CupCakes />} />
         <Route path="/juice" element={<Juice />} />
-        <Route path="/cupcakeDetail" element={<CupcakeDetail />} />
+        <Route path="/cupcakeDetail/:id" element={<CupcakeDetail />} />
       </Routes>
     <Footer />
     </BrowserRouter>

@@ -64,7 +64,8 @@ export default function CupCakes() {
             className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col md:flex-row items-center md:items-start transition-transform transform hover:scale-105 max-w-4xl mx-auto"
           >
             {/* Link to the detailed page of the cupcake */}
-            <Link to={`/cupcakes/${cupcake.id}`} className="w-full flex md:flex-row">
+            <Link to={`/cupcakeDetail/${cupcake.id}`} className="w-full flex md:flex-row">
+
               {/* Cupcake Image (on the left for larger screens) */}
               <img
                 src={cupcake.image}
