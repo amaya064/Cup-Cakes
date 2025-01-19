@@ -23,7 +23,7 @@ export default function Home() {
       </div>
 
       {/* Info Section */}
-      <div className="w-full p-6 flex flex-col md:flex-row justify-between items-center bg-white shadow-md rounded-lg">
+      <div className="w-full mt-10 p-6 flex flex-col md:flex-row justify-between items-center bg-white shadow-md rounded-lg">
         {/* Left Section */}
         <div className="flex flex-col items-start text-left pl-36">
           <p className="text-lg font-semibold text-gray-800">🔒 Secure Payment</p>
@@ -44,7 +44,7 @@ export default function Home() {
       </div>
 
       {/* Our Services Section */}
-      <div className="mt-40 p-6">
+      <div className="mt-30 p-6">
         <h2 className="text-center text-2xl font-bold text-gray-800 mb-6">
           Our Services
         </h2>
@@ -127,7 +127,7 @@ export default function Home() {
         {/* Photo on the Right */}
         <div className="w-full md:w-1/2 p-4">
           <img
-            src="src/images/juice-photo.jpg"
+            src="src/images/photo10.jpg"
             alt="Juice"
             className="w-full h-60 rounded-lg object-cover shadow-lg"
           />

@@ -1,14 +1,13 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // Import useParams to access URL params
+import { useParams } from "react-router-dom"; // Import useParams to access URL params
 
-// Example cupcake data (with corrected image paths)
 const cupcakes = [
   {
     name: "Strawberry Cupcake",
     description:
       "A delightful treat with a moist vanilla base, topped with fresh strawberry frosting and a slice of strawberry.",
     price: "$4.99 (includes a small snack)",
-    image: "src/images/photo4.jpg",
+    image: "/src/images/photo4.jpg",
     id: 1,
   },
   {
@@ -16,7 +15,7 @@ const cupcakes = [
     description:
       "Classic and timeless, our vanilla cupcake is light, fluffy, and topped with a creamy vanilla buttercream.",
     price: "$4.50 (includes a small snack)",
-    image: "src/images/photo5.jpg",
+    image: "/src/images/photo5.jpg",
     id: 2,
   },
   {
@@ -24,7 +23,7 @@ const cupcakes = [
     description:
       "Rich and velvety, this cupcake is topped with a smooth cream cheese frosting for a perfect balance.",
     price: "$5.25 (includes a small snack)",
-    image: "src/images/photo6.jpg",
+    image: "/src/images/photo6.jpg",
     id: 3,
   },
   {
@@ -32,7 +31,7 @@ const cupcakes = [
     description:
       "A chocolate lover’s dream, featuring a moist chocolate base and decadent chocolate ganache frosting.",
     price: "$5.00 (includes a small snack)",
-    image: "src/images/photo7.jpg",
+    image: "/src/images/photo7.jpg",
     id: 4,
   },
   {
@@ -40,7 +39,7 @@ const cupcakes = [
     description:
       "Infused with real coffee, this cupcake is perfect for coffee enthusiasts, topped with a coffee buttercream.",
     price: "$5.50 (includes a small snack)",
-    image: "src/images/photo8.jpg",
+    image: "/src/images/photo8.jpg",
     id: 5,
   },
   {
@@ -48,13 +47,13 @@ const cupcakes = [
     description:
       "A delightful combination of vanilla and cookie crumbles, topped with a creamy cookie-flavored frosting.",
     price: "$5.75 (includes a small snack)",
-    image: "src/images/photo9.jpg",
+    image: "/src/images/photo9.jpg",
     id: 6,
   },
 ];
 
 export default function CupcakeDetail() {
-  const { id } = useNavigate(); // Get the cupcake ID from the URL
+  const { id } = useParams(); // Extract the ID from the URL
   const cupcake = cupcakes.find((cupcake) => cupcake.id === parseInt(id));
 
   return (
