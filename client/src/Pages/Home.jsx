@@ -4,9 +4,21 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
       {/* Header */}
-      <header className="text-center py-4 bg-blue-600 text-white text-2xl font-bold">
-        Welcome to MUFFINE STORE
-      </header>
+<header className="bg-gradient-to-r from-pink-500 to-indigo-600 text-white">
+  <div className="container mx-auto flex flex-col items-center py-6 px-4">
+    {/* Store Title */}
+    <h1 className="text-4xl font-extrabold tracking-wide">
+      Welcome to <span className="text-yellow-300">MUFFINE STORE</span>
+    </h1>
+    <p className="mt-2 text-lg font-medium">
+      Your one-stop shop for delightful muffins and refreshing treats!
+    </p>
+
+    {/* Decorative Line */}
+    <div className="mt-4 w-16 h-1 bg-yellow-300 rounded"></div>
+  </div>
+</header>
+
 
       {/* Image Ad */}
       <div className="w-full p-4">
@@ -35,7 +47,7 @@ export default function Home() {
 
 
       {/* Muffine Description Section */}
-<div className="mt-40 p-6 flex flex-col md:flex-row items-center bg-white shadow-md rounded-lg">
+<div className="mt-20 p-6 flex flex-col md:flex-row items-center bg-white shadow-md rounded-lg">
   <div className="w-full md:w-1/2 p-4">
     <img
       src="src/images/photo3.jpg"
