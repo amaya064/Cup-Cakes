@@ -11,7 +11,7 @@ const drinks = [
     id: 1,
   },
   {
-    name: "watermelon Juice",
+    name: "watermelon Drink",
     description:
       "Pure watermelon juice made from freshly harvested watermelon, no added sugar.with some snack",
     price: "$3.50 (includes a small snack)",
