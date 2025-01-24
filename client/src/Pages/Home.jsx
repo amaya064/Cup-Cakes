@@ -30,7 +30,7 @@ export default function Home() {
       </div>
 
       {/* Info Section */}
-      <div className="w-full mt-10 p-6 flex flex-col md:flex-row justify-between items-center bg-white shadow-md rounded-lg">
+      <div className="w-full mt-0 p-6 flex flex-col md:flex-row justify-between items-center bg-white shadow-md rounded-lg">
         <div className="flex flex-col items-start text-left pl-36">
           <p className="text-lg font-semibold text-gray-800">🔒 Secure Payment</p>
           <p className="text-sm text-gray-600">100% Secure Payment</p>
