@@ -48,7 +48,7 @@ export default function Home() {
 
       {/* Muffine Description Section */}
 <div className="mt-20 p-6 flex flex-col md:flex-row items-center bg-white shadow-md rounded-lg cursor-pointer"
- onClick={() => (window.location.href = "/cupcakes")}
+ onClick={() => (window.location.href = "/cup-cakes")}
 >
   <div className="w-full md:w-1/2 p-4">
     <img
