@@ -47,12 +47,14 @@ export default function Home() {
 
 
       {/* Muffine Description Section */}
-<div className="mt-20 p-6 flex flex-col md:flex-row items-center bg-white shadow-md rounded-lg">
+<div className="mt-20 p-6 flex flex-col md:flex-row items-center bg-white shadow-md rounded-lg cursor-pointer"
+ onClick={() => (window.location.href = "/cupcakes")}
+>
   <div className="w-full md:w-1/2 p-4">
     <img
       src="src/images/photo3.jpg"
       alt="Muffine"
-      className="w-full h-60 rounded-lg object-cover shadow-lg transform transition duration-500 hover:scale-110 hover:rotate-3"
+      className="w-full h-60 rounded-lg object-cover shadow-lg transform transition duration-500 hover:scale-110 hover:rotate-3 "
     />
   </div>
   <div className="w-full md:w-1/2 p-4 text-center md:text-left">
@@ -66,7 +68,9 @@ export default function Home() {
 </div>
 
 {/* Juice Description Section */}
-<div className="mt-10 p-6 flex flex-col md:flex-row items-center bg-white shadow-md rounded-lg">
+<div className="mt-10 p-6 flex flex-col md:flex-row items-center bg-white shadow-md rounded-lg cursor-pointer"
+onClick={() => (window.location.href = "/Juice")}
+>
   <div className="w-full md:w-1/2 p-4 text-center md:text-left">
     <h3 className="text-2xl font-bold text-gray-800 mb-4">Juice</h3>
     <p className="text-gray-600 text-lg">
