@@ -37,6 +37,9 @@ export default function Header() {
           <Link to="/about">
             <li className="text-slate-700 hover:underline">About</li>
           </Link>
+          <Link to="/">
+            <li className="text-slate-700 hover:underline">Home</li>
+          </Link>
         </ul>
         <form className="bg-slate-100 p-3 rounded-lg flex items-center">
           <input
@@ -64,6 +67,9 @@ export default function Header() {
               </Link>
             </>
           )}
+          <Link to="/cart">
+                <li className="hidden sm:inline text-slate-700 hover:underline">Cart</li>
+              </Link>
         </ul>
       </div>
     </header>
