@@ -65,7 +65,7 @@ export default function JuiceDetail() {
               Price per unit: ${juice.price.toFixed(2)}
             </p>
             <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">
-              Buy
+              Add to art
             </button>
             {/* Specify Quantity Section */}
             <div className="mt-4">
