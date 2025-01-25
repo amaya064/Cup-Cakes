@@ -57,3 +57,17 @@ export const signin = async (req, res, next) => {
       next(error);
     }
   };
+
+
+  export const getUserByEmail = async (req, res) => {
+    const { email } = req.query;
+    try {
+      const user = await User.findOne({ email });
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+      res.json(user);
+    } catch (error) {
+      res.status(500).json({ message: 'Failed to fetch user data' });
+    }
+  };

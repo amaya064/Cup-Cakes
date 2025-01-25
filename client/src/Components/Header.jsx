@@ -1,7 +1,23 @@
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 
 export default function Header() {
+  const [email, setEmail] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedEmail = localStorage.getItem('email');
+    setEmail(storedEmail);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('email');
+    localStorage.removeItem('userData');
+    setEmail(null);
+    navigate("/sign-in");
+  };
+
   return (
     <header className="bg-slate-200 shadow-md">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
@@ -31,15 +47,23 @@ export default function Header() {
           <FaSearch className="text-slate-600" />
         </form>
         <ul className="flex gap-4">
-          <Link to="/">
-            <li className="hidden sm:inline text-slate-700 hover:underline">Home</li>
-          </Link>
-          <Link to="/sign-in">
-            <li className="hidden sm:inline text-slate-700 hover:underline">SignIn</li>
-          </Link>
-          <Link to="/cart">
-            <li className="hidden sm:inline text-slate-700 hover:underline">Cart</li>
-          </Link>
+          {email ? (
+            <>
+              <li className="text-slate-700 hover:underline cursor-pointer" onClick={() => navigate('/profile')}>
+                {email}
+              </li>
+             
+            </>
+          ) : (
+            <>
+              <Link to="/sign-in">
+                <li className="hidden sm:inline text-slate-700 hover:underline">SignIn</li>
+              </Link>
+              <Link to="/sign-up">
+                <li className="hidden sm:inline text-slate-700 hover:underline">SignUp</li>
+              </Link>
+            </>
+          )}
         </ul>
       </div>
     </header>
