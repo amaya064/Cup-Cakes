@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import { useCart } from "../CartContext";
 
 // Example drink data
 const drinks = [
@@ -7,7 +8,7 @@ const drinks = [
     name: "lime Juice",
     description:
       "Freshly squeezed orange juice, packed with Vitamin C for a refreshing boost.with snack",
-    price: 3.99, // Price as a number for calculations
+    price: 3.99,
     image: "src/images/photo11.jpg",
     id: 1,
   },
@@ -41,9 +42,18 @@ export default function JuiceDetail() {
   const { id } = useParams(); // Extract the ID from the URL
   const juice = drinks.find((drink) => drink.id === parseInt(id));
   const [quantity, setQuantity] = useState(1); // State to track quantity
+  const { addToCart } = useCart();
 
   const handleIncrease = () => setQuantity((prev) => prev + 1);
   const handleDecrease = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+
+  // Add to Cart handler
+  const handleAddToCart = () => {
+    if (juice) {
+      addToCart(quantity, juice.price * quantity); // Add item to cart
+      alert(`${quantity} ${juice.name}(s) added to cart!`);
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100 p-6">
@@ -64,8 +74,11 @@ export default function JuiceDetail() {
             <p className="text-blue-600 font-semibold mb-4">
               Price per unit: ${juice.price.toFixed(2)}
             </p>
-            <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">
-              Add to art
+            <button
+              onClick={handleAddToCart}
+              className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700"
+            >
+              Add to Cart
             </button>
             {/* Specify Quantity Section */}
             <div className="mt-4">

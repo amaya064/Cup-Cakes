@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom"; // Import useParams to access URL params
+import { useCart } from "../CartContext";
 
 const cupcakes = [
   {
@@ -56,9 +57,17 @@ export default function CupcakeDetail() {
   const { id } = useParams(); // Extract the ID from the URL
   const cupcake = cupcakes.find((cupcake) => cupcake.id === parseInt(id));
   const [quantity, setQuantity] = useState(1); // State for quantity
+  const { addToCart } = useCart();
 
   const handleIncrease = () => setQuantity((prev) => prev + 1);
   const handleDecrease = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+
+  const handleAddToCart = () => {
+    if(cupcake){
+    addToCart(quantity, quantity * cupcake.price); // Add item to cart
+    alert(`${quantity} ${cupcake.name}(s) added to cart!`);
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100 p-6">
@@ -82,7 +91,7 @@ export default function CupcakeDetail() {
               Price per unit: ${cupcake.price.toFixed(2)}
             </p>
             {/* Add to Cart Button */}
-            <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+            <button onClick={handleAddToCart} className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">
               Add to Cart
             </button>
             {/* Specify Quantity Section */}
