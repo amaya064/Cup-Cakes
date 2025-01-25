@@ -46,8 +46,27 @@ export const CartProvider = ({ children }) => {
     });
   };
 
+  // Add a function to remove an item from the cart
+  const removeFromCart = (name) => {
+    setCart((prev) => {
+      // Filter out the item that matches the name
+      const updatedItems = prev.items.filter((item) => item.name !== name);
+      
+      // Calculate new totalQuantity and totalPrice based on the updatedItems
+      const newTotalQuantity = updatedItems.reduce((total, item) => total + item.quantity, 0);
+      const newTotalPrice = updatedItems.reduce((total, item) => total + item.totalPrice, 0);
+
+      return {
+        ...prev,
+        items: updatedItems,
+        totalQuantity: newTotalQuantity,
+        totalPrice: newTotalPrice,
+      };
+    });
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );
