@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CartProvider   } from "./CartContext";
 import Home from './Pages/Home';
 import SignIn from './Pages/SignIn';
 import SignUp from './Pages/SignUp';
@@ -15,6 +16,7 @@ import JuiceDetail from './Pages/JuiceDetail';
 
 export default function App() {
   return (
+    <CartProvider>
     <BrowserRouter>
       <Header />
       <Routes>
@@ -31,5 +33,6 @@ export default function App() {
       </Routes>
     <Footer />
     </BrowserRouter>
+    </CartProvider>
   );
 }
