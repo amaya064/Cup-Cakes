@@ -1,9 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function Payment() {
   const location = useLocation();
   const { state } = location;
+
+  const [cardNumber, setCardNumber] = useState('');
+  const [expiryDate, setExpiryDate] = useState('');
+  const [cvv, setCvv] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const paymentDetails = {
+      firstName: state.firstName,
+      lastName: state.lastName,
+      address: state.address,
+      phone: state.phone,
+      email: state.email,
+      cartItems: state.cartItems,
+      totalPrice: state.totalPrice,
+      cardNumber: cardNumber,
+      expiryDate: expiryDate,
+      cvv: cvv,
+    };
+
+    try {
+      const response = await fetch('http://localhost:3000/api/payment/process-payment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(paymentDetails),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert('Payment processed successfully!');
+        console.log(data);
+        // You can navigate to another page or reset the form here
+      } else {
+        alert('Payment failed!');
+        console.log(data);
+      }
+    } catch (error) {
+      console.error('Error processing payment:', error);
+      alert('There was an error processing your payment.');
+    }
+  };
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen flex items-center justify-center">
@@ -50,7 +95,7 @@ export default function Payment() {
         {/* Card Details */}
         <div className="bg-white shadow-md rounded-lg p-4">
           <h2 className="text-xl font-bold mb-4 text-center text-gray-800">Card Details</h2>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label htmlFor="cardNumber" className="block text-gray-700 font-medium mb-1">
                 Card Number
@@ -59,6 +104,8 @@ export default function Payment() {
                 type="text"
                 id="cardNumber"
                 name="cardNumber"
+                value={cardNumber}
+                onChange={(e) => setCardNumber(e.target.value)}
                 className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
                 maxLength="16"
@@ -75,6 +122,8 @@ export default function Payment() {
                   type="text"
                   id="expiryDate"
                   name="expiryDate"
+                  value={expiryDate}
+                  onChange={(e) => setExpiryDate(e.target.value)}
                   className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                   maxLength="5"
@@ -89,6 +138,8 @@ export default function Payment() {
                   type="text"
                   id="cvv"
                   name="cvv"
+                  value={cvv}
+                  onChange={(e) => setCvv(e.target.value)}
                   className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                   maxLength="3"

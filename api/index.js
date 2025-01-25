@@ -3,6 +3,8 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import userRouter from './routes/user.route.js';
+import paymentRouter from './routes/payment.route.js';
+
 
 dotenv.config();
 
@@ -20,6 +22,8 @@ mongoose
   });
 
 app.use('/api', userRouter);
+app.use('/api/payment', paymentRouter); 
+
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
