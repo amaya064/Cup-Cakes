@@ -50,7 +50,7 @@ export default function JuiceDetail() {
   // Add to Cart handler
   const handleAddToCart = () => {
     if (juice) {
-      addToCart(quantity, juice.price * quantity); // Add item to cart
+      addToCart(juice.name,quantity, juice.price * quantity); // Add item to cart
       alert(`${quantity} ${juice.name}(s) added to cart!`);
     }
   };

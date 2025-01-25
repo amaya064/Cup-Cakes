@@ -64,7 +64,7 @@ export default function CupcakeDetail() {
 
   const handleAddToCart = () => {
     if(cupcake){
-    addToCart(quantity, quantity * cupcake.price); // Add item to cart
+    addToCart(cupcake.name,quantity, quantity * cupcake.price); // Add item to cart
     alert(`${quantity} ${cupcake.name}(s) added to cart!`);
     }
   };
