@@ -9,7 +9,7 @@ const drinks = [
     description:
       "Freshly squeezed orange juice, packed with Vitamin C for a refreshing boost.with snack",
     price: 3.99,
-    image: "src/images/photo11.jpg", // Corrected image path
+    image: "/src/images/photo11.jpg", // Corrected image path
     id: 1,
   },
   {
@@ -17,7 +17,7 @@ const drinks = [
     description:
       "Pure watermelon juice made from freshly harvested watermelon, no added sugar.with some snack",
     price: 3.5,
-    image: "src/images/photo12.jpg", // Corrected image path
+    image: "/src/images/photo12.jpg", // Corrected image path
     id: 2,
   },
   {
@@ -25,7 +25,7 @@ const drinks = [
     description:
       "A creamy and tropical milk coffee blended with fresh coffee, fresh milk and fresh yogurt.",
     price: 4.99,
-    image: "src/images/photo13.jpg", // Corrected image path
+    image: "/src/images/photo13.jpg", // Corrected image path
     id: 3,
   },
   {
@@ -33,7 +33,7 @@ const drinks = [
     description:
       "A delicious mix of chocolate, blueberries, and raspberries blended into a creamy.",
     price: 5.25,
-    image: "src/images/photo14.jpg", // Corrected image path
+    image: "/src/images/photo14.jpg", // Corrected image path
     id: 4,
   },
 ];
